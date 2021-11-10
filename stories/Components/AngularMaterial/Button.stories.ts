@@ -1,26 +1,140 @@
+import { moduleMetadata } from '@storybook/angular';
 import {Meta, Story} from '@storybook/angular/types-6-0';
-import {MatButtonModule} from '@angular/material/button';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CommonModule } from '@angular/common';
+import { MatButton, MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 export default {
   title: 'Components/Angular Material/Button',
-  component: MatButtonModule,
+  component: MatButton,
+  decorators: [
+    moduleMetadata({
+      imports: [
+        CommonModule,
+        BrowserAnimationsModule,
+        MatButtonModule
+      ]
+    })
+  ],
+  args: {
+    label: 'Button',
+    color: '',
+    disabled: false,
+    disableRipple: false
+  },
+  argTypes: {
+    color: {
+      description: 'Theme color palette for the button.',
+      control: {
+        type: 'select',
+        options: [null, 'primary', 'accent', 'warn']
+      }
+    },
+    disabled: {
+      description: 'Whether the button is disabled.',
+    },
+    disableRipple: {
+      description: 'Whether ripples are disabled.'
+    },
+    onClick: {
+      action: 'onClick'
+    }
+  },
+  parameters: {
+    controls: { expanded: true }
+  }
 } as Meta;
 
-const Template: Story<MatButtonModule> = (args: MatButtonModule) => ({
-  props: args,
+export const Default: Story<MatButton> = (args) => ({
+  template: `
+  <button mat-button
+    [color]="color"
+    [disabled]="disabled"
+    [disableRipple]="disableRipple"
+    (click)="onClick($event)">{{ label }}</button>
+  `,
+  props: args
 });
 
-export const Basic = Template.bind({});
-// More on args: https://storybook.js.org/docs/angular/writing-stories/args
-Basic.args = {
-  // primary: true,
-  // label: 'Button',
-};
+export const Raised: Story<MatButton> = (args) => ({
+  template: `
+  <button mat-raised-button
+    [color]="color"
+    [disabled]="disabled"
+    [disableRipple]="disableRipple"
+    (click)="onClick($event)">{{ label }}</button>
+  `,
+  props: args
+});
 
-// export const Primary = () => ({
-//   props: {
-//     label: 'Button',
-//   },
-// });
-//
-// Primary.storyName = 'I am the primary';
+export const Stroked: Story<MatButton> = (args) => ({
+  template: `
+  <button mat-stroked-button
+    [color]="color"
+    [disabled]="disabled"
+    [disableRipple]="disableRipple"
+    (click)="onClick($event)">{{ label }}</button>
+  `,
+  props: args
+});
+
+export const Flat: Story<MatButton> = (args) => ({
+  template: `
+  <button mat-flat-button
+    [color]="color"
+    [disabled]="disabled"
+    [disableRipple]="disableRipple"
+    (click)="onClick($event)">{{ label }}</button>
+  `,
+  props: args
+});
+
+export const Icon: Story<MatButton> = (args) => ({
+  template: `
+  <button mat-icon-button
+    [color]="color"
+    [disabled]="disabled"
+    [disableRipple]="disableRipple"
+    (click)="onClick($event)">
+    <mat-icon>favorite</mat-icon>
+  </button>
+  `,
+  moduleMetadata: {
+    imports: [MatButtonModule, MatIconModule]
+  },
+  props: args
+});
+
+export const FAB: Story<MatButton> = (args) => ({
+  template: `
+  <button mat-fab
+    [color]="color"
+    [disabled]="disabled"
+    [disableRipple]="disableRipple"
+    (click)="onClick($event)">
+    <mat-icon>favorite</mat-icon>
+  </button>
+  `,
+  moduleMetadata: {
+    imports: [MatButtonModule, MatIconModule]
+  },
+  props: args
+});
+
+export const MiniFAB: Story<MatButton> = (args) => ({
+  template: `
+  <button mat-mini-fab
+    [color]="color"
+    [disabled]="disabled"
+    [disableRipple]="disableRipple"
+    (click)="onClick($event)">
+    <mat-icon>favorite</mat-icon>
+  </button>
+  `,
+  moduleMetadata: {
+    imports: [MatButtonModule, MatIconModule]
+  },
+  props: args
+});
