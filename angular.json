@@ -3,5 +3,37 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-  }
+    "ngx-daventure": {
+      "projectType": "library",
+      "root": "projects/ngx-daventure",
+      "sourceRoot": "projects/ngx-daventure/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/ngx-daventure/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngx-daventure/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ngx-daventure/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-daventure/src/test.ts",
+            "tsConfig": "projects/ngx-daventure/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-daventure/karma.conf.js"
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "ngx-daventure"
 }
