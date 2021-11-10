@@ -2,26 +2,43 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.13.
 
+## Architecture
+
+The projects aims to provide a documented and viewable library of components based on Angular Material and Material Design.
+
+```
+❯ tree -I node_modules -L 2
+.
+├── LICENSE
+├── README.md
+├── angular.json
+├── dist // Where projects are build and where the assets are exported for StoryBook
+│   ├── empty-app // Storybook use that folder to serve static content
+│   └── ngx-daventure
+├── documentation.json // Updated each time storybook is generated
+├── package-lock.json
+├── package.json
+├── projects
+│   ├── empty-app // The fake empty project for extracting assets
+│   └── ngx-daventure // The library of components
+├── stories // Here are stored storybook stories
+│   └── xxx.stories.ts
+└── tsconfig.json
+```
+
 ## Development server
+
+You can intanciate some components into the fake app, but the current projet acts as a library, this should not be served.
+
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Building
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Before running StoryBook you must export Angular Material style sheets. You can achieve that building the project, run `ng build empty-app`
 
-## Build
+You can build the library too, run `ng build`.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Running StoryBook
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Run `npm run storybook` for a dev server. Navigate to `http://localhost:6006/`. The app will automatically reload if you change any of the source files.
