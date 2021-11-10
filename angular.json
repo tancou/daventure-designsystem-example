@@ -12,7 +12,8 @@
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "projects/ngx-daventure/ng-package.json"
+            "project": "projects/ngx-daventure/ng-package.json",
+            "tsConfig": "projects/ngx-daventure/tsconfig.lib.json"
           },
           "configurations": {
             "production": {
