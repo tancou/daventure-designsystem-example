@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "docs:json": "compodoc -p ./tsconfig.json -e json -d .",
-    "storybook": "npm run docs:json && start-storybook -p 6006",
+    "storybook": "npm run docs:json && start-storybook -s ./dist/empty-app/ -p 6006",
     "build-storybook": "npm run docs:json && build-storybook"
   },
   "private": true,
@@ -35,6 +35,7 @@
     "@babel/core": "^7.16.0",
     "@compodoc/compodoc": "^1.1.15",
     "@storybook/addon-actions": "^6.3.12",
+    "@storybook/addon-cssresources": "^6.2.9",
     "@storybook/addon-essentials": "^6.3.12",
     "@storybook/addon-links": "^6.3.12",
     "@storybook/angular": "^6.3.12",
