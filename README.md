@@ -42,3 +42,13 @@ You can build the library too, run `ng build`.
 ## Running StoryBook
 
 Run `npm run storybook` for a dev server. Navigate to `http://localhost:6006/`. The app will automatically reload if you change any of the source files.
+
+## Create a new component or module
+
+For a Module : run `ng g module <MyName>`.
+
+For a Component : run `ng g component <MyName> --module <my-name> --style scss --export`.
+
+Then you can find it into `projects/ngx-daventure/src/lib/<my-name>`
+
+Then, you can move the componant/module into another subfolder in order to make it a nested package.

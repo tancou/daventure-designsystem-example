@@ -12,9 +12,8 @@
     "declaration": false,
     "downlevelIteration": true,
     "paths": {
-      "ngx-daventure": [
-        "dist/ngx-daventure/ngx-daventure",
-        "dist/ngx-daventure"
+      "ngx-daventure/*": [
+        "dist/ngx-daventure/*"
       ]
     },
     "experimentalDecorators": true,

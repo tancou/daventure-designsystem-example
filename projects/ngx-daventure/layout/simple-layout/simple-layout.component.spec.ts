@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NgxDaventureComponent } from './ngx-daventure.component';
+import { SimpleLayoutComponent } from './simple-layout.component';
 
-describe('NgxDaventureComponent', () => {
-  let component: NgxDaventureComponent;
-  let fixture: ComponentFixture<NgxDaventureComponent>;
+describe('SimpleLayoutComponent', () => {
+  let component: SimpleLayoutComponent;
+  let fixture: ComponentFixture<SimpleLayoutComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NgxDaventureComponent ]
+      declarations: [ SimpleLayoutComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NgxDaventureComponent);
+    fixture = TestBed.createComponent(SimpleLayoutComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
