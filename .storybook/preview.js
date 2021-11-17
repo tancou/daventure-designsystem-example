@@ -9,9 +9,18 @@ import purpleGreen from '@angular/material/prebuilt-themes/purple-green.css'
 import docJson from "../documentation.json";
 setCompodocJson(docJson);
 
+// import isChromatic from 'chromatic/isChromatic';
+// if (isChromatic()) {
+  let head = document.getElementsByTagName('head')[0];
+  let style = document.createElement('style');
+  head.appendChild(style);
+  style.appendChild(document.createTextNode(indigoPink));
+// }
+
 export const decorators = [
   withCssResources
 ];
+
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
