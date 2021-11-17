@@ -12,15 +12,14 @@ The projects aims to provide a documented and viewable library of components bas
 ├── LICENSE
 ├── README.md
 ├── angular.json
-├── dist // Where projects are build and where the assets are exported for StoryBook
-│   ├── empty-app // Storybook use that folder to serve static content
+├── dist // Where projects are built
 │   └── ngx-daventure
 ├── documentation.json // Updated each time storybook is generated
 ├── package-lock.json
 ├── package.json
 ├── projects
-│   ├── empty-app // The fake empty project for extracting assets
 │   └── ngx-daventure // The library of components
+├── public // Here are stored assets
 ├── stories // Here are stored storybook stories
 │   └── xxx.stories.ts
 └── tsconfig.json
@@ -34,8 +33,6 @@ You can intanciate some components into the fake app, but the current projet act
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Building
-
-Before running StoryBook you must export Angular Material style sheets. You can achieve that building the project, run `ng build empty-app`
 
 You can build the library too, run `ng build`.
 
@@ -52,3 +49,7 @@ For a Component : run `ng g component <MyName> --module <my-name> --style scss -
 Then you can find it into `projects/ngx-daventure/src/lib/<my-name>`
 
 Then, you can move the componant/module into another subfolder in order to make it a nested package.
+
+## Export to Chromatic
+
+Run `npm run chromatic`. Then open the link to review changes.
